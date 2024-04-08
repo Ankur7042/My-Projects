@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Whatsapp Clone -  Chat Application</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="we_will_send_otp_on_your_number_to_verify">we will send OTP on your number to verify</string>
+    <string name="verify_your_phone_number">Verify your phone number</string>
+    <string name="image">image</string>
+    <string name="enter_otp_to_verify_your_phone_number">Enter OTP to verify your phone number</string>
+    <string name="enter_otp">Enter OTP</string>
+    <string name="profile_info">Profile Info</string>
+    <string name="please_set_your_name_and_profile_photo">Please set your Name and Profile photo</string>
+    <string name="enter_your_name">Enter your Name</string>
+    <string name="tap_to_chat">Tap to Chat</string>
+    <string name="ankur_jha">Ankur Jha</string>
+    <string name="enter_your_message">Enter your Message</string>
+    <string name="hi_how_are_you">Hi , how are you</string>
+    <string name="ayush_sharma">Ayush Sharma</string>
+    <string name="log_out">Log Out</string>
+</resources>
