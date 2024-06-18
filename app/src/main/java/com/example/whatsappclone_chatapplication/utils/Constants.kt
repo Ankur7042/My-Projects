@@ -1,4 +1,4 @@
-package com.example.whatsappclone_chatapplication
+package com.example.whatsappclone_chatapplication.utils
 
 object Constants {
     const val INTENT_EXTRA_UID = "uid"

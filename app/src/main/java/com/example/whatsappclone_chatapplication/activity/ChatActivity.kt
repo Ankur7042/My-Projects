@@ -7,8 +7,8 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
-import com.example.whatsappclone_chatapplication.Constants
-import com.example.whatsappclone_chatapplication.FirebaseRepository
+import com.example.whatsappclone_chatapplication.utils.Constants
+import com.example.whatsappclone_chatapplication.repository.FirebaseRepository
 import com.example.whatsappclone_chatapplication.R
 import com.example.whatsappclone_chatapplication.adapter.MessageAdapter
 import com.example.whatsappclone_chatapplication.databinding.ActivityChatBinding
@@ -16,7 +16,6 @@ import com.example.whatsappclone_chatapplication.model.MessageModel
 import com.example.whatsappclone_chatapplication.ui.ImagePreviewFragment
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import java.util.Date
 
@@ -42,7 +41,7 @@ class ChatActivity : AppCompatActivity() {
 
         senderUid = FirebaseRepository.getInstance().auth.uid.toString()
         // Code Review: Don't use force null wrap and put these strings in constant
-        receiverUid = intent.getStringExtra(Constants.INTENT_EXTRA_UID)!!
+        receiverUid = intent.getStringExtra(Constants.INTENT_EXTRA_UID).toString()
 
 
         binding.name.text = intent.getStringExtra(Constants.INTENT_EXTRA_NAME)!!
@@ -84,7 +83,8 @@ class ChatActivity : AppCompatActivity() {
 
 
         //Getting the data from the database i.e chats -> senderRoom -> messages
-        FirebaseRepository.getInstance().database.reference.child(Constants.CHAT_NODE).child(senderRoom)
+        FirebaseRepository.getInstance().database.reference.child(Constants.CHAT_NODE)
+            .child(senderRoom)
             .child(Constants.MESSAGES_NODE)
             .addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
@@ -118,11 +118,13 @@ class ChatActivity : AppCompatActivity() {
         val message = MessageModel(messageText, senderUid, Date().time)
         val randomKey = FirebaseRepository.getInstance().database.reference.push().key
 
-        FirebaseRepository.getInstance().database.reference.child(Constants.CHAT_NODE).child(senderRoom)
+        FirebaseRepository.getInstance().database.reference.child(Constants.CHAT_NODE)
+            .child(senderRoom)
             .child(Constants.MESSAGES_NODE).child(randomKey!!)
             .setValue(message)
             .addOnSuccessListener {
-                FirebaseRepository.getInstance().database.reference.child(Constants.CHAT_NODE).child(receiverRoom)
+                FirebaseRepository.getInstance().database.reference.child(Constants.CHAT_NODE)
+                    .child(receiverRoom)
                     .child(Constants.MESSAGES_NODE).child(randomKey)
                     .setValue(message)
                     .addOnSuccessListener {
@@ -161,7 +163,6 @@ class ChatActivity : AppCompatActivity() {
 
         // Hide other UI elements
         hideChatActivityLayout()
-
     }
 
     private fun hideChatActivityLayout() {

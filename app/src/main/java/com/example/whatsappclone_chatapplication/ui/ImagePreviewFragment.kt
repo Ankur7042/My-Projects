@@ -9,12 +9,11 @@ import androidx.activity.addCallback
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.bumptech.glide.Glide
-import com.example.whatsappclone_chatapplication.Constants
-import com.example.whatsappclone_chatapplication.FirebaseRepository
+import com.example.whatsappclone_chatapplication.utils.Constants
+import com.example.whatsappclone_chatapplication.repository.FirebaseRepository
 import com.example.whatsappclone_chatapplication.activity.ChatActivity
 import com.example.whatsappclone_chatapplication.activity.NumberActivity
 import com.example.whatsappclone_chatapplication.databinding.FragmentImagePreviewBinding
-import com.google.firebase.auth.FirebaseAuth
 
 
 class ImagePreviewFragment : Fragment() {

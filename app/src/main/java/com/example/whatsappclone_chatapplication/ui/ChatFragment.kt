@@ -5,8 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.whatsappclone_chatapplication.Constants
-import com.example.whatsappclone_chatapplication.FirebaseRepository
+import com.example.whatsappclone_chatapplication.utils.Constants
+import com.example.whatsappclone_chatapplication.repository.FirebaseRepository
 import com.example.whatsappclone_chatapplication.adapter.ChatAdapter
 import com.example.whatsappclone_chatapplication.databinding.FragmentChatBinding
 import com.example.whatsappclone_chatapplication.model.UserModel

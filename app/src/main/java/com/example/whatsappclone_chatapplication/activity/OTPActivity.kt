@@ -8,12 +8,11 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.whatsappclone_chatapplication.Constants
-import com.example.whatsappclone_chatapplication.FirebaseRepository
+import com.example.whatsappclone_chatapplication.utils.Constants
+import com.example.whatsappclone_chatapplication.repository.FirebaseRepository
 import com.example.whatsappclone_chatapplication.R
 import com.example.whatsappclone_chatapplication.databinding.ActivityOtpactivityBinding
 import com.google.firebase.FirebaseException
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.PhoneAuthCredential
 import com.google.firebase.auth.PhoneAuthOptions
 import com.google.firebase.auth.PhoneAuthProvider
@@ -75,7 +74,7 @@ class OTPActivity : AppCompatActivity() {
 
         binding.button.setOnClickListener{
             if(binding.otp.text!!.isEmpty()){
-                Toast.makeText(this,Constants.ENTER_OTP_TOAST,Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, Constants.ENTER_OTP_TOAST,Toast.LENGTH_SHORT).show()
             }
             else
             {

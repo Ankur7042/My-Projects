@@ -7,11 +7,10 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.whatsappclone_chatapplication.Constants
-import com.example.whatsappclone_chatapplication.FirebaseRepository
+import com.example.whatsappclone_chatapplication.utils.Constants
+import com.example.whatsappclone_chatapplication.repository.FirebaseRepository
 import com.example.whatsappclone_chatapplication.R
 import com.example.whatsappclone_chatapplication.databinding.ActivityNumberBinding
-import com.google.firebase.auth.FirebaseAuth
 
 class NumberActivity : AppCompatActivity() {
 
@@ -36,13 +35,14 @@ class NumberActivity : AppCompatActivity() {
             finish()
         }
 
+
         // Now user is not registered already
         binding.button.setOnClickListener{
             if(binding.phoneNumber.text!!.isEmpty()){
-                Toast.makeText(this,Constants.ENTER_NUMBER_TOAST,Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, Constants.ENTER_NUMBER_TOAST,Toast.LENGTH_SHORT).show()
             }
             else if(binding.phoneNumber.text!!.length < 10){
-                Toast.makeText(this,Constants.ENTER_VALID_NUMBER_TOAST,Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, Constants.ENTER_VALID_NUMBER_TOAST,Toast.LENGTH_SHORT).show()
             }
             // Take the user to the OTP activity
             else{

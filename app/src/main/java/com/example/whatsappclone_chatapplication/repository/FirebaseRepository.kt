@@ -1,4 +1,4 @@
-package com.example.whatsappclone_chatapplication
+package com.example.whatsappclone_chatapplication.repository
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

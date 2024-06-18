@@ -2,7 +2,7 @@ package com.example.whatsappclone_chatapplication.viewmodels
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
-import com.example.whatsappclone_chatapplication.FirebaseRepository
+import com.example.whatsappclone_chatapplication.repository.FirebaseRepository
 
 class MainViewModel : ViewModel() {
 

@@ -5,12 +5,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.whatsappclone_chatapplication.FirebaseRepository
+import com.example.whatsappclone_chatapplication.repository.FirebaseRepository
 import com.example.whatsappclone_chatapplication.R
 import com.example.whatsappclone_chatapplication.databinding.ReceiverLayoutBinding
 import com.example.whatsappclone_chatapplication.databinding.SentItemLayoutBinding
 import com.example.whatsappclone_chatapplication.model.MessageModel
-import com.google.firebase.auth.FirebaseAuth
 
 class MessageAdapter(var context: Context, private var list: ArrayList<MessageModel>) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -37,6 +36,7 @@ class MessageAdapter(var context: Context, private var list: ArrayList<MessageMo
     override fun getItemViewType(position: Int): Int {
         return if (FirebaseRepository.getInstance().auth.uid == list[position].senderId) itemSent else itemReceive
     }
+
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val messageSavedToDatabase = list[position]

@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.whatsappclone_chatapplication.Constants
+import com.example.whatsappclone_chatapplication.utils.Constants
 import com.example.whatsappclone_chatapplication.R
 import com.example.whatsappclone_chatapplication.activity.ChatActivity
 import com.example.whatsappclone_chatapplication.databinding.ChatUserItemLayoutBinding
@@ -24,6 +24,7 @@ class ChatAdapter(var context : Context, private var list: ArrayList<UserModel>)
        return ChatViewHolder(LayoutInflater.from(parent.context)
            .inflate(R.layout.chat_user_item_layout,parent,false))
     }
+
 
     override fun getItemCount(): Int {
         return list.size

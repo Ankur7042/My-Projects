@@ -70,4 +70,6 @@ dependencies {
     implementation ("androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version") // For Kotlin use lifecycle-viewmodel-ktx
 // alternatively - just LiveData
     implementation ("androidx.lifecycle:lifecycle-livedata:$lifecycle_version")
+
+
 }
